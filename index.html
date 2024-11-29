@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Stars - Tienda de Ropa Moderna y Retro</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        header,
+        footer {
+            background-color: #111;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        header img.logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            color: #ffffff;
+        }
+
+        nav {
+            background-color: #222;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #bbb;
+        }
+
+        /* Sección de Introducción */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cta-button {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        /* Grid de Productos */
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .productos-grid img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .productos-grid p {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        /* Formulario de Contacto */
+        #contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contact-form button {
+            width: 100%;
+        }
+
+        /* Video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 8px;
+        }
+
+        /* Efectos de Media Queries */
+        @media (max-width: 1024px) {
+            .productos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .container img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 0.9rem;
+                margin: 0 5px;
+            }
+
+            #contact-form button {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Nuevos estilos para el formulario y botones */
+        #contact-form #form-message {
+            margin-top: 10px;
+            color: green;
+        }
+
+        .productos-grid div {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            transition: box-shadow 0.3s;
+        }
+
+        .productos-grid div:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-container {
+            margin: 20px 0;
+        }
+
+        /* Estilo para el mensaje de agradecimiento */
+        .thank-you-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="imagenes/imagen logo.jpg" class="logo" alt="Logotipo de Young Stars, un icono juvenil y moderno">
+        <h1>Young Stars</h1>
+    </header>
+
+    <nav>
+        <a onclick="scrollToSection('inicio')">Inicio</a>
+        <a onclick="scrollToSection('productos')">Productos</a>
+        <a onclick="scrollToSection('contacto')">Contacto</a>
+    </nav>
+
+    <main>
+        <section id="inicio" class="active">
+            <div class="container">
+                <div>
+                    <h2>Descubre Young Stars</h2>
+                    <p>En Young Stars, creemos que la moda es una forma de expresarse, y queremos brindarte las
+                        herramientas para hacerlo. Nuestra tienda está pensada para jóvenes dinámicos y atrevidos, que
+                        buscan destacar y diferenciarse a través de la moda. Con una mezcla perfecta entre lo moderno y
+                        lo retro, ofrecemos ropa única y exclusiva que refleja tu estilo personal.</p>
+                    <button class="cta-button" onclick="scrollToSection('productos')">Explora la Tienda</button>
+                </div>
+                <img src="https://img.freepik.com/fotos-premium/tendencia-moda-retro-estilo-nostalgico-anos-90-anos-80-anos-2000-viejos-modelos-ropa-comercial-poster-arte-pop_1041523-60.jpg"
+                    alt="Muestra de ropa y estilo retro inspirados en los años 80 y 90">
+            </div>
+        </section>
+
+        <section id="productos">
+            <h2>Productos</h2>
+
+            <h3>Ropa para Hombre</h3>
+            <div class="productos-grid">
+                <div>
+                    <img src="https://i.pinimg.com/474x/d7/85/65/d785657ad54cb3bf9b65b7c69dbad234.jpg"
+                        alt="Chaqueta estilo vintage de mezclilla para hombres">
+                    <p>Chaqueta Vintage</p>
+                    <p>$120,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+                <div>
+                    <img src="https://th.bing.com/th/id/OIP.19BRzuLORmDnfQKEHipDzQHaHa?rs=1&pid=ImgDetMain"
+                        alt="Camiseta retro estilo ochentero">
+                    <p>Camiseta Retro</p>
+                    <p>$45,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+                <div>
+                    <img src="https://i.pinimg.com/originals/2f/16/93/2f16939f4805d22a3e40022cb2dc6630.png"
+                        alt="Zapatos deportivos retro para hombres">
+                    <p>Zapatos Retro</p>
+                    <p>$90,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+            <h3>Ropa para Mujer</h3>
+            <div class="productos-grid">
+                <div>
+                    <img src="https://th.bing.com/th/id/OIP.iNFtFaRogyXk4NWC3WJdFAAAAA?rs=1&pid=ImgDetMain"
+                        alt="Blusa vintage con estampado de flores">
+                    <p>Blusa Vintage</p>
+                    <p>$55,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+                <div>
+                    <img src="https://galapagopanama.com/cdn/shop/products/falda_atenea_700x700.jpg?v=1597087650"
+                        alt="Falda estilo retro a cuadros">
+                    <p>Falda Retro</p>
+                    <p>$65,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+                <div>
+                    <img src="https://media.vogue.mx/photos/63dc371f851dd5a4a24befa7/master/w_1600%2Cc_limit/fashion_pieces.jpg"
+                        alt="Vestido retro colorido">
+                    <p>Vestido Colorido</p>
+                    <p>$110,000 COP</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu email" required>
+                <input type="tel" placeholder="Tu teléfono" required>
+                <textarea rows="4" placeholder="Tu mensaje" required></textarea>
+                <button type="submit">Enviar</button>
+                <p id="form-message"></p>
+            </form>
+            <div class="thank-you-message">
+                Gracias por tu interés, nos pondremos en contacto contigo pronto.
+            </div>
+        </section>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZOSkBwdM6_Q?si=gJsvsiGpbWbc-UYF"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Young Stars. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para desplazarse a la sección correspondiente
+        function scrollToSection(section) {
+            const element = document.getElementById(section);
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Manejo del envío del formulario de contacto
+        document.getElementById('contact-form').onsubmit = function (event) {
+            event.preventDefault();
+            document.getElementById('form-message').textContent = 'Gracias por tu mensaje.';
+            this.reset(); // Reiniciar el formulario
+        };
+    </script>
+</body>
+
+</html>
